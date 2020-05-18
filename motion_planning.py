@@ -159,6 +159,7 @@ class MotionPlanning(Drone):
         # Long -122.402253
         goal_geo = [-122.402253, 37.797466, 0]
         grid_goal =  global_to_local(goal_geo , self.global_home)
+        grid_goal = (int(grid_goal[0]) , int(grid_goal[1]))
         print(grid_goal)
         #grid_goal = (602,750)
 
