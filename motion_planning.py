@@ -85,7 +85,10 @@ class MotionPlanning(Drone):
     def waypoint_transition(self):
         self.flight_state = States.WAYPOINT
         print("waypoint transition")
-        self.target_position = self.waypoints.pop(0)
+        if np.size(self.waypoints) != 0:
+            self.target_position = self.waypoints.pop(0)
+        else:
+            self.landing_transition()
         print('target position', self.target_position)
         self.cmd_position(self.target_position[0], self.target_position[1], self.target_position[2], self.target_position[3])
 

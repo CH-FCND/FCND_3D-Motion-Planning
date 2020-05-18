@@ -132,6 +132,4 @@ It works!
   
 # Extra Challenges: Real World Planning
 
-For an extra challenge, consider implementing some of the techniques described in the "Real World Planning" lesson. You could try implementing a vehicle model to take dynamic constraints into account, or implement a replanning method to invoke if you get off course or encounter unexpected obstacles.
-
-
+In order to improve the functionality of the waypoint_transition a condtional check was included to ensure that the waypoint list was not empty.  This was done to handle the situation where the drone uis provided the same goal and start state.
