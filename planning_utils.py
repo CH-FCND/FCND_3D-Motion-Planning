@@ -50,10 +50,15 @@ class Action(Enum):
     to the current grid position. The third and final value
     is the cost of performing the action.
     """
-
-    WEST = (0, -1, 1)
-    WEST = (0, -1, 1)
-    EAST = (0, 1, 1)
+    sqrt2 = np.sqrt(2)
+    NORTHWEST   = (-1, -1, sqrt2)
+    WEST        = ( 0, -1, 1)
+    SOUTHWEST   = ( 1, -1, sqrt2)
+    
+    NORTHEAST   = (-1, 1, sqrt2)
+    EAST        = ( 0, 1, 1)
+    NORTHEAST   = (-1, 1, sqrt2)
+    
     NORTH = (-1, 0, 1)
     SOUTH = (1, 0, 1)
     
