@@ -52,9 +52,11 @@ class Action(Enum):
     """
 
     WEST = (0, -1, 1)
+    WEST = (0, -1, 1)
     EAST = (0, 1, 1)
     NORTH = (-1, 0, 1)
     SOUTH = (1, 0, 1)
+    
 
     @property
     def cost(self):
@@ -142,5 +144,6 @@ def a_star(grid, h, start, goal):
 
 
 def heuristic(position, goal_position):
-    return np.linalg.norm(np.array(position) - np.array(goal_position))
+    return np.sqrt((goal_position[1]-position[1])**2 + (goal_position[0]-position[0])**2)
+    #return np.linalg.norm(np.array(position) - np.array(goal_position))
 
