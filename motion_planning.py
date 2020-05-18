@@ -154,14 +154,15 @@ class MotionPlanning(Drone):
 
         # Set goal as some arbitrary position on the grid
         grid_goal = (-north_offset + 10, -east_offset + 10)
-        # TODO: adapt to set goal as latitude / longitude position and convert
+        # DONE: adapt to set goal as latitude / longitude position and convert
         # Lat 37.797466
         # Long -122.402253
-        goal_geo = [-122.402253, 37.797466, 0] # [-122.397829, 37.792515, 0] #
+        goal_geo = [-122.397829, 37.792515, 0] #[-122.402253, 37.797466, 0] # 
         grid_goal =  global_to_local(goal_geo , self.global_home)
         grid_goal = (-north_offset + int(grid_goal[0]) , -east_offset + int(grid_goal[1]))
         print(grid_goal)
         #grid_goal = (602,750)
+        # consider checking if in collision with an object?
 
         # Run A* to find a path from start to goal
         # TODO: add diagonal motions with a cost of sqrt(2) to your A* implementation
