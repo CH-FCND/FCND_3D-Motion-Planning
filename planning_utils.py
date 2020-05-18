@@ -40,7 +40,7 @@ def create_grid(data, drone_altitude, safety_distance):
 
     return grid, int(north_min), int(east_min)
 
-
+sqrt2 = np.sqrt(2)
 # Assume all actions cost the same.
 class Action(Enum):
     """
@@ -50,14 +50,13 @@ class Action(Enum):
     to the current grid position. The third and final value
     is the cost of performing the action.
     """
-    sqrt2 = np.sqrt(2)
     NORTHWEST   = (-1, -1, sqrt2)
     WEST        = ( 0, -1, 1)
     SOUTHWEST   = ( 1, -1, sqrt2)
     
     NORTHEAST   = (-1, 1, sqrt2)
     EAST        = ( 0, 1, 1)
-    NORTHEAST   = (-1, 1, sqrt2)
+    SOUTHEAST   = ( 1, 1, sqrt2)
     
     NORTH = (-1, 0, 1)
     SOUTH = (1, 0, 1)
